@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style>
+        button{
+            width: 100px;
+            height: 100px;
+            background-color:lightseagreen ;
+        }
+        div{
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <button onclick="if(!flag){operand1=operand1*10 + 1; console.log('operand1: '+operand1)}
+        else{operand2=operand2*10 + 1; console.log('operand2: '+operand2) } ">1</button>
+
+    <button onclick="if(!flag){operand1=operand1*10 + 2; console.log('operand1: '+operand1)}
+        else{operand2=operand2*10 + 2; console.log('operand2: '+operand2) } ">2</button>
+
+    <button onclick="if(!flag){operand1=operand1*10 + 3; console.log('operand1: '+operand1)}
+        else{operand2=operand2*10 + 3; console.log('operand2: '+operand2) } ">3</button>
+
+    <button onclick="if(!flag){operand1=operand1*10 + 4; console.log('operand1: '+operand1)}
+        else{operand2=operand2*10 + 4; console.log('operand2: '+operand2) } ">4</button>
+
+    <button onclick="if(!flag){operand1=operand1*10 + 5; console.log('operand1: '+operand1)}
+        else{operand2=operand2*10 + 5; console.log('operand2: '+operand2) } ">5</button>
+
+    <button onclick="if(!flag){operand1=operand1*10 + 6; console.log('operand1: '+operand1)}
+        else{operand2=operand2*10 + 6; console.log('operand2: '+operand2) } ">6</button>
+
+    <button onclick="if(!flag){operand1=operand1*10 + 7; console.log('operand1: '+operand1)}
+        else{operand2=operand2*10 + 7; console.log('operand2: '+operand2) } ">7</button>
+
+    <button onclick="if(!flag){operand1=operand1*10 + 8; console.log('operand1: '+operand1)}
+        else{operand2=operand2*10 + 8; console.log('operand2: '+operand2) } ">8</button>
+
+    <button onclick="if(!flag){operand1=operand1*10 + 9; console.log('operand1: '+operand1)}
+        else{operand2=operand2*10 + 9; console.log('operand2: '+operand2) } ">9</button>
+
+    <button onclick="flag=true" style="font-size: 40px;font-weight: bold">+</button>
+
+    <button onclick="if(!flag){operand1=operand1*10; console.log('operand1: '+operand1)}
+        else{operand2=operand2*10; console.log('operand2: '+operand2) } ">0</button>
+
+    <button onclick="if(operand1!=0 || operand2!=0) {
+        suma=operand1+operand2; console.log('Sum: '+suma);
+    } else{
+        console.log('NO NUMBERS ARE TYPED!');
+        }" style="font-size: 40px;font-weight: bold">=</button>
+
+    <button onclick="operand1=0; operand2=0; suma=0; flag=false; console.log('Operands and sum RESET')"
+            style="font-size: 15px;font-weight: bold;font-family: Arial">RESET</button>
+</div>
+
+<script>
+    let flag = false;
+    let operand1=0;
+    let operand2=0;
+    let suma = 0;
+</script>
+</body>
+</html>
