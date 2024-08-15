@@ -46,22 +46,48 @@
     <button onclick="if(!flag){operand1=operand1*10 + 9; console.log('operand1: '+operand1)}
         else{operand2=operand2*10 + 9; console.log('operand2: '+operand2) } ">9</button>
 
-    <button onclick="flag=true" style="font-size: 40px;font-weight: bold">+</button>
-
     <button onclick="if(!flag){operand1=operand1*10; console.log('operand1: '+operand1)}
         else{operand2=operand2*10; console.log('operand2: '+operand2) } ">0</button>
 
-    <button onclick="if(operand1!=0 || operand2!=0) {
-        suma=operand1+operand2; console.log('Sum: '+suma);
+    <button onclick="flag=true; tip=1;" style="font-size: 40px;font-weight: bold">+</button>
+
+    <button onclick="flag=true; tip=2;" style="font-size: 40px;font-weight: bold">-</button>
+
+    <button onclick="if(operand1!==0 || operand2!==0) {
+        if(tip===1){
+            suma=operand1+operand2; console.log('Result: '+suma);
+        }
+        else if(tip===2){
+            suma=operand1-operand2; console.log('Result: '+suma);
+        }
+        else if(tip===3){
+            suma=operand1*operand2; console.log('Result: '+suma);
+        }
+        else{
+            if(operand2!==0){
+            suma=operand1/operand2; console.log('Result: '+suma);
+            }
+            else{
+                console.log('Can\'t divide by 0');
+            }
+        }
+
     } else{
         console.log('NO NUMBERS ARE TYPED!');
-        }" style="font-size: 40px;font-weight: bold">=</button>
+        } operand1=0; operand2=0; suma=0; flag=false;"
+            style="font-size: 40px;font-weight: bold">=</button>
 
-    <button onclick="operand1=0; operand2=0; suma=0; flag=false; console.log('Operands and sum RESET')"
-            style="font-size: 15px;font-weight: bold;font-family: Arial">RESET</button>
+    <button onclick="flag=true; tip=3;" style="font-size: 40px;font-weight: bold">*</button>
+
+    <button onclick="flag=true; tip=4;" style="font-size: 40px;font-weight: bold">/</button>
+
+    <button onclick="operand1=0; operand2=0; suma=0; flag=false; console.log('Result and operands are reset!')"
+            style="font-size: 20px;font-weight: bold">RESET</button>
+
 </div>
 
 <script>
+    let tip;
     let flag = false;
     let operand1=0;
     let operand2=0;
